@@ -1,0 +1,9 @@
+/* Paleta azul marinho inspirada na identidade visual enviada */
+:root{--black:#061326;--ink:#111d2c}
+body{background:var(--black)}
+.hero{background:radial-gradient(ellipse at 78% 50%,#18385d 0,transparent 50%),#061326}
+.solutions{background:#0b1d34}.solution-card:hover{background:#173455}
+.about{background:radial-gradient(ellipse at 15% 50%,#17385b,#071528 65%)}
+.contact{background:#081a30}.site-header{background:rgba(6,19,38,.88)}.site-header.scrolled{background:rgba(6,19,38,.97)}
+@media(max-width:700px){.nav{background:#0b1d34}}
+.site-header.light{background:rgba(244,241,233,.96);color:#111d2c;border-bottom-color:rgba(75,67,48,.16)}.site-header.light .nav{background:transparent}.site-header.light .nav a{color:#111d2c}
