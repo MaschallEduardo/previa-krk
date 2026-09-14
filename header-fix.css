@@ -1,0 +1,1 @@
+.site-header{position:fixed;top:0;background:rgba(16,18,15,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .3s ease,box-shadow .3s ease}.site-header.scrolled{background:rgba(16,18,15,.96);box-shadow:0 8px 28px rgba(0,0,0,.18)}

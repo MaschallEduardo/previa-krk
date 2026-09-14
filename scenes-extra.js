@@ -1,0 +1,8 @@
+import * as THREE from './vendor/three.module.js';
+const gold=new THREE.MeshStandardMaterial({color:0xb89552,metalness:.72,roughness:.3});
+const paper=new THREE.MeshStandardMaterial({color:0xe8dfca,metalness:.05,roughness:.8});
+function base(id){const c=document.getElementById(id),r=c.getBoundingClientRect(),ren=new THREE.WebGLRenderer({canvas:c,alpha:true,antialias:true});ren.setPixelRatio(Math.min(devicePixelRatio,2));ren.setSize(r.width,r.height,false);const s=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,r.width/r.height,.1,100);cam.position.z=10;s.add(new THREE.AmbientLight(0xffffff,2));const l=new THREE.DirectionalLight(0xe2bd72,4);l.position.set(-3,5,6);s.add(l);return {c,ren,s,cam}}
+const d=base('documents-scene'),docs=[];
+for(let i=0;i<5;i++){const g=new THREE.Group();g.position.set((i-2)*1.15,1.5+(i%2)*.35,0);g.rotation.set((i-2)*.15,i*.3-.6,(i-2)*.12);g.add(new THREE.Mesh(new THREE.BoxGeometry(1.45,.09,1.9),paper));for(let j=0;j<3;j++){const line=new THREE.Mesh(new THREE.BoxGeometry(.82,.018,.035),gold);line.position.set(-.1,.07,-.45+j*.25);g.add(line)}d.s.add(g);docs.push(g)}
+function resize(x){const r=x.c.getBoundingClientRect();x.ren.setSize(r.width,r.height,false);x.cam.aspect=r.width/r.height;x.cam.updateProjectionMatrix()}addEventListener('resize',()=>resize(d),{passive:true});
+function render(){const p=Math.min(1,Math.max(0,(scrollY-innerHeight*.45)/innerHeight));docs.forEach((g,i)=>{const spread=(i-2)*1.15;g.position.x=spread*p;g.position.y=(1.5+(i%2)*.35)*(1-p)+((i-2)*.24)*p;g.rotation.z=(i-2)*.12*(1-p);g.rotation.y=(i*.3-.6)*p});d.ren.render(d.s,d.cam);requestAnimationFrame(render)}render();

@@ -1,0 +1,6 @@
+/* Entradas suaves e escalonadas ao rolar */
+.motion .reveal:not(.visible){opacity:0;transform:translateY(34px) scale(.985)}
+.motion .reveal.visible{opacity:1;transform:translateY(0) scale(1)}
+.motion .solution-card:nth-child(2){transition-delay:.08s}.motion .solution-card:nth-child(3){transition-delay:.16s}.motion .solution-card:nth-child(4){transition-delay:.24s}.motion .solution-card:nth-child(5){transition-delay:.32s}.motion .solution-card:nth-child(6){transition-delay:.4s}.motion .solution-card:nth-child(7){transition-delay:.48s}.motion .solution-card:nth-child(8){transition-delay:.56s}
+.motion .issue-list li:nth-child(2){transition-delay:.06s}.motion .issue-list li:nth-child(3){transition-delay:.12s}.motion .issue-list li:nth-child(4){transition-delay:.18s}.motion .issue-list li:nth-child(5){transition-delay:.24s}.motion .issue-list li:nth-child(6){transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){.motion .reveal:not(.visible){opacity:1;transform:none}}

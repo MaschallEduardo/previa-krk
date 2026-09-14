@@ -1,0 +1,16 @@
+.method{min-height:0;padding-bottom:70px;overflow:visible!important}.metodo-layout{align-items:start;position:relative;z-index:1;min-height:1580px}.metodo-sticky{position:sticky;top:24vh;z-index:4}.metodo-sticky .metodo-title{font-size:24px;max-width:22ch}.metodo-steps{padding-top:8vh;padding-bottom:8vh;gap:78px}.metodo-step{min-height:150px;opacity:.22;transition:opacity .4s ease}.metodo-step.active{opacity:1;visibility:visible}.metodo-step h3{font-size:25px}.metodo-step p{font-size:15.5px}
+@media(max-width:860px){
+  .method{padding:84px 7% 70px}
+  .metodo-layout{grid-template-columns:1fr;min-height:0;gap:28px}
+  .metodo-sticky{position:sticky;top:86px;background:#faf9f5;padding:10px 0 16px;flex-direction:row;align-items:center;gap:18px}
+  .metodo-ring{width:96px;height:96px;flex:0 0 96px}
+  .metodo-num{font-size:32px}
+  .metodo-sticky .metodo-title{font-size:21px;max-width:18ch}
+  .metodo-steps{padding:8px 0 30px;gap:0}
+  .metodo-step{min-height:180px;display:block;padding:22px 0;border-top:1px solid #c1b391}
+  /* no mobile, o título e número já aparecem no bloco fixo à esquerda */
+  .metodo-steps .metodo-step>span,.metodo-steps .metodo-step h3{display:none!important}
+  .metodo-step p{font-size:16px;line-height:1.55;margin:0;padding-left:0;max-width:100%}
+  .metodo-step:not(.active) p{visibility:hidden;opacity:0}
+  .metodo-step.active p{visibility:visible;opacity:1}
+}
